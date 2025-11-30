@@ -28,4 +28,51 @@ function getHumanChoice() {
     }
 }
 
-console.log(getHumanChoice())
+function playRound(humanChoice, computerChoice) {
+    let result = null
+
+    if (humanChoice === computerChoice) {
+        result = "Draw"
+    } else if (humanChoice === "Rock" && computerChoice === "Paper") {
+        result = "Lose"
+    } else if (humanChoice === "Rock" && computerChoice === "Scissors") {
+        result = "Win"
+    } else if (humanChoice === "Paper" && computerChoice === "Rock") {
+        result = "Win"
+    } else if (humanChoice === "Paper" && computerChoice === "Scissors") {
+        result = "Lose"
+    } else if (humanChoice === "Scissors" && computerChoice === "Rock") {
+        result = "Lose"
+    } else if (humanChoice === "Scissors" && computerChoice === "Paper") {
+        result = "Win"
+    }
+
+    if (result === "Draw") {
+        console.log(
+            `Draw! Both have ${humanChoice}
+Your score: ${humanScore}
+Computer score: ${computerScore}`
+        )
+    } else if (result === "Win") {
+        humanScore = humanScore + 1
+        console.log(
+            `You win! ${humanChoice} beats ${computerChoice}
+Your score: ${humanScore}
+Computer score: ${computerScore}`
+        )
+    } else if (result === "Lose") {
+        computerScore = computerScore + 1
+        console.log(
+            `You lose! ${computerChoice} beats ${humanChoice}
+Your score: ${humanScore}
+Computer score: ${computerScore}`
+        )
+    } else {
+        console.log(`Error, no result found between ${humanChoice} and ${computerChoice}`)
+    }
+}
+
+const humanSelection = getHumanChoice()
+const computerSelection = getComputerChoice()
+
+playRound(humanSelection, computerSelection)
