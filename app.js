@@ -72,7 +72,22 @@ Computer score: ${computerScore}`
     }
 }
 
-const humanSelection = getHumanChoice()
-const computerSelection = getComputerChoice()
+function playGame() {
+    let humanSelection = getHumanChoice()
+    let computerSelection = getComputerChoice()
+    playRound(humanSelection, computerSelection)
+    humanSelection = getHumanChoice()
+    computerSelection = getComputerChoice()
+    playRound(humanSelection, computerSelection)
+    humanSelection = getHumanChoice()
+    computerSelection = getComputerChoice()
+    playRound(humanSelection, computerSelection)
+    humanSelection = getHumanChoice()
+    computerSelection = getComputerChoice()
+    playRound(humanSelection, computerSelection)
+    humanSelection = getHumanChoice()
+    computerSelection = getComputerChoice()
+    playRound(humanSelection, computerSelection)
+}
 
-playRound(humanSelection, computerSelection)
+playGame()
