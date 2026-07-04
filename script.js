@@ -7,4 +7,5 @@ const getComputerChoice = pickRandom(choices);
 
 let getHumanChoice = prompt("Choose Rock, Paper, or Scissors");
 
-console.log(getHumanChoice);
+let computerScore = 0;
+let humanScore = 0;
