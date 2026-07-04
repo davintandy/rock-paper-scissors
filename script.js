@@ -5,4 +5,6 @@ function pickRandom(array) {
 const choices = ["Rock", "Paper", "Scissors"];
 const getComputerChoice = pickRandom(choices);
 
-console.log(getComputerChoice)
+let getHumanChoice = prompt("Choose Rock, Paper, or Scissors");
+
+console.log(getHumanChoice);
